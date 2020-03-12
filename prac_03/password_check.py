@@ -1,14 +1,25 @@
-MIN_LENGHT = 6
+def main():
 
-password = input("Enter a password")
-valid_password = False
+    minimum_length = 6
+    password = get_password(minimum_length)
 
-while not valid_password:
-    if len(password) < MIN_LENGHT:
-        password = input("Enter a password")
-    else:
-        valid_password = True
+    print_asterisks(password)
 
-for char in password:
-    print("*", end='')
 
+def print_asterisks(password):
+    for char in password:
+        print("*", end='')
+
+
+def get_password(minimum_length):
+    password = input("Enter a password")
+    valid_password = False
+    while not valid_password:
+        if len(password) < minimum_length:
+            password = input("Enter a password")
+        else:
+            valid_password = True
+    return password
+
+
+main()
