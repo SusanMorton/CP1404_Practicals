@@ -23,6 +23,8 @@ def get_data():
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
         print("----------")
+    parts.append(parts)
+    print(parts)
     input_file.close()
 
 
