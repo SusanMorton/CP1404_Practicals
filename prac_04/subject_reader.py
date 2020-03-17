@@ -10,10 +10,18 @@ def main():
     data = get_data()
     print(data)
 
+    teacher_subject_output(data)
+
+
+def teacher_subject_output(data):
+    for subject_info in data:
+        print("{} is taught by {:12} and has {:3} students".format(*subject_info))
+#i must admit i had to look at the solution for this one to get help with what to put in the {}!
 
 def get_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(FILENAME)
+    new_list=[]
     for line in input_file:
         print(line)  # See what a line looks like
         print(repr(line))  # See what a line really looks like
@@ -23,8 +31,9 @@ def get_data():
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
         print("----------")
-    parts.append(parts)
-    print(parts)
+        new_list.append(parts)
+        print(new_list)
+    return new_list
     input_file.close()
 
 
