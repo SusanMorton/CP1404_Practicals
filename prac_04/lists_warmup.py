@@ -11,3 +11,14 @@ print(7 in numbers)# will equal false, as no 7 in numbers
 print("3" in numbers) # will equal false as no string 3 in numbers
 print(numbers + [6, 5, 3]) # will add the [6,5,3] into the list
 
+numbers[0]= "ten"
+print(numbers)
+
+numbers[-1] = 1
+print(numbers)
+
+print(numbers[2:])
+
+for number in numbers:
+    if number == 9:
+        print("The number 9 was found in the numbers list")
