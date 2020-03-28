@@ -1,29 +1,18 @@
 
 email_dict = {}
 email = input("Email: ")
-#email = "susan.morton@jcu.edu.au"
 
 while email != '':
-    #email = input("Email: ")
-    #email = "susan.morton@jcu.edu.au"
     name = email.split('@')
-    print(name)
     extract_name = name[0].split('.')
-    print(extract_name)
-    final_name = ' '.join(extract_name)
-    print(final_name.title())
-    name_correct = 'Y'
+    final_name = ' '.join(extract_name).title()
     name_correct = input('Is your name {} (Y/n)'.format(final_name.title())).upper()
-    if name_correct == 'Y':
-        print('yay')
+    if name_correct == 'Y' or name_correct == '':
         email_dict[final_name] = email
-    elif name_correct =='N':
-        print('boo')
+    elif name_correct == 'N':
         final_name = input("Name: ").title()
         email_dict[final_name] = email
     email = input("Email: ")
 
-
-print(email_dict)
-
-
+for names, emails in email_dict.items():
+    print("{} ({})".format(names, emails))
