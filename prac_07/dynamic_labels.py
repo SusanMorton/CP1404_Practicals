@@ -19,10 +19,17 @@ class DynamicLabelApp(App):
     def create_labels(self):
         for name in self.label_name_list:
             print(name)
+            temp_label = Label(text=name, id=name)
+            print(temp_label)
+            temp_label.bind(on_release=self.press_item)
             #self.root.ids.output_label.add_widget(Label(name))
-            self.root.ids.output_label.text = name
+            #self.root.ids.output_label.text = name
+            self.root.ids.output_label.add_widget(temp_label)
 
-#i dont know how to do this. a sample solution would have been much more helpful than referring to dynamic widgets and the very minimal instructions. :( 
+    def press_item(self, instance):
+        name = instance.id  # or name = instance.text
+        # update status text
+        self.status_text = "{}".format(self.name)
 
 
 
