@@ -21,15 +21,15 @@ class DynamicLabelApp(App):
             print(name)
             temp_label = Label(text=name, id=name)
             print(temp_label)
-            temp_label.bind(on_release=self.press_item)
+            #temp_label.bind(on_release=self.press_item)
             #self.root.ids.output_label.add_widget(Label(name))
             #self.root.ids.output_label.text = name
             self.root.ids.output_label.add_widget(temp_label)
 
-    def press_item(self, instance):
-        name = instance.id  # or name = instance.text
+    #def press_item(self, instance):
+     #   name = instance.id  # or name = instance.text
         # update status text
-        self.status_text = "{}".format(self.name)
+      #  self.status_text = "{}".format(self.name)
 
 
 
