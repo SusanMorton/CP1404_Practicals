@@ -22,7 +22,7 @@ def main():
         for filename in filenames:
             current_name = os.path.join(directory_name, filename)
             print(current_name)
-            new_file_name = get_fixed_filename(filename)
+            get_fixed_filename(filename)
             #new_name = os.path.join(directory_name, get_fixed_filename(filename))
             #print(new_name)
             #os.rename(current_name, new_name)
@@ -32,7 +32,18 @@ def main():
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
     new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    for letter in filename:
+        if letter.isupper():
+            print(letter)
+            print("hello")
+
+
+
+
+
+        #if letter.isupper():
+        #    print("*")
+    #return new_name
 
 
 main()
